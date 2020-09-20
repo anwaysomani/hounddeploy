@@ -1,0 +1,59 @@
+<response>
+  <returncode>SUCCESS</returncode>
+  <meetings>
+    <meeting>
+      <meetingName>test1</meetingName>
+      <meetingID>test1</meetingID>
+      <internalMeetingID>b444ac06613fc8d63795be9ad0beaf55011936ac-1600525092502</internalMeetingID>
+      <createTime>1600525092502</createTime>
+      <createDate>Sat Sep 19 14:18:12 UTC 2020</createDate>
+      <voiceBridge>80062</voiceBridge>
+      <dialNumber>613-555-1234</dialNumber>
+      <attendeePW>xFLXZeTl</attendeePW>
+      <moderatorPW>mGDLs0J3</moderatorPW>
+      <running>false</running>
+      <duration>0</duration>
+      <hasUserJoined>false</hasUserJoined>
+      <recording>false</recording>
+      <hasBeenForciblyEnded>false</hasBeenForciblyEnded>
+      <startTime>1600525093298</startTime>
+      <endTime>0</endTime>
+      <participantCount>0</participantCount>
+      <listenerCount>0</listenerCount>
+      <voiceParticipantCount>0</voiceParticipantCount>
+      <videoCount>0</videoCount>
+      <maxUsers>0</maxUsers>
+      <moderatorCount>0</moderatorCount>
+      <attendees> </attendees>
+      <metadata> </metadata>
+      <isBreakout>false</isBreakout>
+    </meeting>
+    <meeting>
+      <meetingName>testvb3</meetingName>
+      <meetingID>testvb3</meetingID>
+      <internalMeetingID>b474fa993b62b039032763efbcde6ac032bda123-1600525010108</internalMeetingID>
+      <createTime>1600525010108</createTime>
+      <createDate>Sat Sep 19 14:16:50 UTC 2020</createDate>
+      <voiceBridge>22436</voiceBridge>
+      <dialNumber>613-555-1234</dialNumber>
+      <attendeePW>Akaj6MTV</attendeePW>
+      <moderatorPW>ARA4x2Pt</moderatorPW>
+      <running>false</running>
+      <duration>0</duration>
+      <hasUserJoined>false</hasUserJoined>
+      <recording>false</recording>
+      <hasBeenForciblyEnded>false</hasBeenForciblyEnded>
+      <startTime>1600525010143</startTime>
+      <endTime>0</endTime>
+      <participantCount>0</participantCount>
+      <listenerCount>0</listenerCount>
+      <voiceParticipantCount>0</voiceParticipantCount>
+      <videoCount>0</videoCount>
+      <maxUsers>0</maxUsers>
+      <moderatorCount>0</moderatorCount>
+      <attendees> </attendees>
+      <metadata> </metadata>
+      <isBreakout>false</isBreakout>
+    </meeting>
+  </meetings>
+</response>
