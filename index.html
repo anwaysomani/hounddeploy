@@ -1,33 +1,14 @@
-<!DOCTYPE html>
-<html ng-app="glimpse">
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <title>glimpse</title>
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="static/css/index.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
-<body ng-controller="attendeeController as vm" ng-keypress="vm.joinEvent($event.key)">
-  <div class="exit">
-    <div class="inner">
-      <h1>Joining Room...</h1>
-    </div>
-  </div>
-  <div class="wrapper">
-    <h3>Join the room</h3>
-    <div class="search">
-      <form name="cse" id="searchbox_demo" class="searchform"  autocomplete="off">
-        <input type="text" size="40" class="searchbox" ng-model="vm.fullName" placeholder="Enter your name here..." />
-        <input type="submit" name="sa" value="Search" />
-      </form>
-    </div>
-  </div>
-
-  <!-- SHA Converter -->
-  <script src="static/js/sha1.js"></script>
-
-  <!-- Page Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  <script src="static/js/index.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="static/js/animate.js"></script>
-</body>
+<body>
+  <app-root></app-root>
+<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
 </html>
