@@ -499,8 +499,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          console.log(localStorage);
           localStorage.clear();
+          sessionStorage.clear();
+          location.href = 'https://glimpsevc.com';
         }
       }]);
 
