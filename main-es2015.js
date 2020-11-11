@@ -291,6 +291,7 @@ class HomeComponent {
         console.log(this.cookieService);
         localStorage.clear();
         sessionStorage.clear();
+        this.cookieService.deleteAll();
         ng2_cookies__WEBPACK_IMPORTED_MODULE_2__["Cookie"].deleteAll();
         location.href = 'https://glimpsevc.com';
     }
