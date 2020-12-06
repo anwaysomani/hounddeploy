@@ -276,7 +276,7 @@ class HomeComponent {
     }
     addCheckUser(planId) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            yield this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/verifyUserRecord/', {
+            yield this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
                 emailId: this.emailId,
                 paymentId: this.paymentId,
                 paymentSuccess: true,

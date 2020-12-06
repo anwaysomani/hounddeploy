@@ -543,7 +543,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 switch (_context2.prev = _context2.next) {
                   case 0:
                     _context2.next = 2;
-                    return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/verifyUserRecord/', {
+                    return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
                       emailId: this.emailId,
                       paymentId: this.paymentId,
                       paymentSuccess: true,
