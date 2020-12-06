@@ -585,6 +585,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function doPayment(amount, planId) {
           var _this2 = this;
 
+          this.parentPlanId = planId;
           this.rzp = new this.winRef.nativeWindow['Razorpay']({
             key: 'rzp_live_aIOxiqLOFaYWYS',
             name: 'Glimpse',
@@ -596,7 +597,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             theme: {
               color: '#3880FF'
             },
-            handler: this.paymentHandler.bind(this, planId),
+            handler: this.paymentHandler.bind(this),
             modal: {
               ondismiss: function ondismiss() {
                 _this2.zone.run(function () {// add routing if it fails
@@ -608,9 +609,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }, {
         key: "paymentHandler",
-        value: function paymentHandler(res, planId) {
+        value: function paymentHandler(res) {
+          console.log(res);
           this.paymentId = res.razorpay_payment_id;
-          this.addCheckUser(planId);
+          this.addCheckUser(this.parentPlanId);
           this.zone.run(function () {// add API call here
           });
         }

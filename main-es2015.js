@@ -299,6 +299,7 @@ class HomeComponent {
         }).toPromise();
     }
     doPayment(amount, planId) {
+        this.parentPlanId = planId;
         this.rzp = new this.winRef.nativeWindow['Razorpay']({
             key: 'rzp_live_aIOxiqLOFaYWYS',
             name: 'Glimpse',
@@ -310,7 +311,7 @@ class HomeComponent {
             theme: {
                 color: '#3880FF',
             },
-            handler: this.paymentHandler.bind(this, planId),
+            handler: this.paymentHandler.bind(this),
             modal: {
                 ondismiss: () => {
                     this.zone.run(() => {
@@ -321,9 +322,10 @@ class HomeComponent {
         });
         this.rzp.open();
     }
-    paymentHandler(res, planId) {
+    paymentHandler(res) {
+        console.log(res);
         this.paymentId = res.razorpay_payment_id;
-        this.addCheckUser(planId);
+        this.addCheckUser(this.parentPlanId);
         this.zone.run(() => {
             // add API call here
         });
