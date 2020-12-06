@@ -459,7 +459,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-          return ctx_r4.doPayment(obj_r1.pricing, obj_r1.userId);
+          return ctx_r4.doPayment(obj_r1.pricing, obj_r1.userPlanId);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Select Plan ->");
@@ -542,19 +542,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               while (1) {
                 switch (_context2.prev = _context2.next) {
                   case 0:
-                    _context2.next = 2;
+                    console.log(planId);
+                    _context2.next = 3;
                     return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
                       emailId: this.emailId,
                       paymentId: this.paymentId,
-                      paymentSuccess: true,
-                      userPlanId: planId
+                      userPlanId: planId,
+                      paymentSuccess: true
                     }).toPromise();
 
-                  case 2:
-                    _context2.next = 4;
+                  case 3:
+                    _context2.next = 5;
                     return this.redirectToApp();
 
-                  case 4:
+                  case 5:
                   case "end":
                     return _context2.stop();
                 }
@@ -585,6 +586,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function doPayment(amount, planId) {
           var _this2 = this;
 
+          console.log(planId);
           this.parentPlanId = planId;
           this.rzp = new this.winRef.nativeWindow['Razorpay']({
             key: 'rzp_live_aIOxiqLOFaYWYS',
@@ -612,6 +614,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function paymentHandler(res) {
           console.log(res);
           this.paymentId = res.razorpay_payment_id;
+          console.log(this.parentPlanId);
           this.addCheckUser(this.parentPlanId);
           this.zone.run(function () {// add API call here
           });

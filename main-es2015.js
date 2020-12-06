@@ -235,7 +235,7 @@ function HomeComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](6, HomeComponent_div_3_li_6_Template, 2, 1, "li", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "li", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](8, "button", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function HomeComponent_div_3_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r5); const obj_r1 = ctx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r4.doPayment(obj_r1.pricing, obj_r1.userId); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function HomeComponent_div_3_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r5); const obj_r1 = ctx.$implicit; const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](); return ctx_r4.doPayment(obj_r1.pricing, obj_r1.userPlanId); });
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "Select Plan ->");
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -276,11 +276,12 @@ class HomeComponent {
     }
     addCheckUser(planId) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            console.log(planId);
             yield this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
                 emailId: this.emailId,
                 paymentId: this.paymentId,
-                paymentSuccess: true,
-                userPlanId: planId
+                userPlanId: planId,
+                paymentSuccess: true
             }).toPromise();
             yield this.redirectToApp();
         });
@@ -299,6 +300,7 @@ class HomeComponent {
         }).toPromise();
     }
     doPayment(amount, planId) {
+        console.log(planId);
         this.parentPlanId = planId;
         this.rzp = new this.winRef.nativeWindow['Razorpay']({
             key: 'rzp_live_aIOxiqLOFaYWYS',
@@ -325,6 +327,7 @@ class HomeComponent {
     paymentHandler(res) {
         console.log(res);
         this.paymentId = res.razorpay_payment_id;
+        console.log(this.parentPlanId);
         this.addCheckUser(this.parentPlanId);
         this.zone.run(() => {
             // add API call here
