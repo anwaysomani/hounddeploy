@@ -647,7 +647,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             key: 'rzp_live_aIOxiqLOFaYWYS',
             name: 'Glimpse',
             description: 'Subscription Fees',
-            amount: amount * 100 + amount * 100 * (this.gstAmt / 100),
+            amount: (amount + amount * (this.gstAmt / 100)) * 100,
             prefill: {
               name: 'Glimpse'
             },
