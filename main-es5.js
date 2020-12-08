@@ -594,30 +594,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "addCheckUser",
         value: function addCheckUser(planId) {
-          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
-              while (1) {
-                switch (_context2.prev = _context2.next) {
-                  case 0:
-                    _context2.next = 2;
-                    return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
-                      emailId: this.emailId,
-                      paymentId: this.paymentId,
-                      userPlanId: planId,
-                      paymentSuccess: true
-                    }).toPromise();
+          var _this2 = this;
 
-                  case 2:
-                    _context2.next = 4;
-                    return this.redirectToApp();
-
-                  case 4:
-                  case "end":
-                    return _context2.stop();
-                }
-              }
-            }, _callee2, this);
-          }));
+          return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
+            emailId: this.emailId,
+            paymentId: this.paymentId,
+            userPlanId: planId,
+            paymentSuccess: true
+          }).toPromise().then(function (r) {
+            _this2.redirectToApp();
+          });
         }
       }, {
         key: "redirectToApp",
@@ -640,7 +626,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "doPayment",
         value: function doPayment(amount, planId) {
-          var _this2 = this;
+          var _this3 = this;
 
           this.parentPlanId = planId;
           this.rzp = new this.winRef.nativeWindow['Razorpay']({
@@ -657,7 +643,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             handler: this.paymentHandler.bind(this),
             modal: {
               ondismiss: function ondismiss() {
-                _this2.zone.run(function () {// add routing if it fails
+                _this3.zone.run(function () {// add routing if it fails
                 });
               }
             }
@@ -675,9 +661,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "paymentHandler",
         value: function paymentHandler(res) {
           this.paymentId = res.razorpay_payment_id;
-          this.addCheckUser(this.parentPlanId);
-          this.zone.run(function () {// add API call here
-          });
+          this.addCheckUser(this.parentPlanId); // this.zone.run(() => {
+          // add API call here
+          // });
         }
       }]);
 

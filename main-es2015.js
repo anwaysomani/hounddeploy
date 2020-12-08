@@ -305,14 +305,13 @@ class HomeComponent {
         });
     }
     addCheckUser(planId) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            yield this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
-                emailId: this.emailId,
-                paymentId: this.paymentId,
-                userPlanId: planId,
-                paymentSuccess: true
-            }).toPromise();
-            yield this.redirectToApp();
+        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].merchantServer + 'userManagement/confirmPayment/', {
+            emailId: this.emailId,
+            paymentId: this.paymentId,
+            userPlanId: planId,
+            paymentSuccess: true
+        }).toPromise().then(r => {
+            this.redirectToApp();
         });
     }
     redirectToApp() {
@@ -360,9 +359,9 @@ class HomeComponent {
     paymentHandler(res) {
         this.paymentId = res.razorpay_payment_id;
         this.addCheckUser(this.parentPlanId);
-        this.zone.run(() => {
-            // add API call here
-        });
+        // this.zone.run(() => {
+        // add API call here
+        // });
     }
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_window_ref_service__WEBPACK_IMPORTED_MODULE_5__["WindowRefService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_6__["CookieService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"])); };
