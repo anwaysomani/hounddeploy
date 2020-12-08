@@ -871,8 +871,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         messagingSenderId: '246295296459',
         appId: '1:246295296459:web:94367e61956a747cd21e4e'
       },
-      merchantServer: 'http://localhost:8000/' // https://houndmerchant.pythonanywhere.com/'
-
+      merchantServer: 'https://houndmerchant.pythonanywhere.com/'
     };
     /*
      * For easier debugging in development mode, you can import the following file
